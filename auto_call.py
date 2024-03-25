@@ -14,9 +14,16 @@ def make_call():
 	time.sleep(delay)
 	pyautogui.click(x=1675, y=884) #click call button
 
+
+def open_excel():
+	pyautogui.click(x=755, y=1044)
+
+
 def on_key_event(event):
 	if event.event_type == keyboard.KEY_DOWN and event.name == 'insert':
 		make_call()
+	if event.event_type == keyboard.KEY_DOWN and event.name == 'end':
+		open_excel()
 
 def main():
 	keyboard.on_press(on_key_event)
